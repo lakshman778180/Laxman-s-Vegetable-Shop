@@ -1,4 +1,4 @@
-Thought for 3 seconds### Ramesh's Vegetable Shop
+### Ramesh's Vegetable Shop
 
 A modern e-commerce website built with Next.js and Tailwind CSS for a local vegetable shop. This application allows customers to browse products, search and filter vegetables, add items to cart, and complete the checkout process.
 
@@ -32,13 +32,13 @@ cd ramesh-vegetable-shop
 2. **Install dependencies**
 
 ```shellscript
-npm install
+pnpm install
 ```
 
 3. **Run the development server**
 
 ```shellscript
-npm run dev
+pnpm run dev
 ```
 
 4. **Open your browser**
@@ -129,14 +129,6 @@ ramesh-vegetable-shop/
 - Product reviews and ratings
 - Wishlist functionality
 - Dark mode support
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## License
 
