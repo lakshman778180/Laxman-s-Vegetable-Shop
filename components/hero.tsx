@@ -11,7 +11,7 @@ export default function Hero() {
               <span className="text-green-600">Delivered to Your Door</span>
             </h1>
             <p className="text-lg text-gray-700 mb-8">
-              Discover the freshest, locally-sourced vegetables from Ramesh's
+              Discover the freshest, locally-sourced vegetables from Laxman's
               shop. Now available online for convenient home delivery.
             </p>
             <div className="flex flex-wrap gap-4">

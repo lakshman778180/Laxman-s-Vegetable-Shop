@@ -1,23 +1,28 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { ShoppingCart, Menu, X } from "lucide-react"
-import { useCart } from "@/context/cart-context"
-import { useAuth } from "@/context/auth-context"
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { ShoppingCart, Menu, X } from "lucide-react";
+import { useCart } from "@/context/cart-context";
+import { useAuth } from "@/context/auth-context";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const pathname = usePathname()
-  const { cartItems } = useCart()
-  const { isAuthenticated, logout } = useAuth()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const { cartItems } = useCart();
+  const { isAuthenticated, logout } = useAuth();
 
-  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0)
+  const totalItems = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
   const isActive = (path: string) => {
-    return pathname === path ? "text-green-500" : "text-gray-700 hover:text-green-500"
-  }
+    return pathname === path
+      ? "text-green-500"
+      : "text-gray-700 hover:text-green-500";
+  };
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
@@ -26,7 +31,7 @@ export default function Header() {
           {/* Logo and Brand */}
           <Link href="/" className="flex items-center">
             <span className="text-green-600 text-2xl font-bold mr-2">🥬</span>
-            <span className="font-bold text-xl">Ramesh's Vegetable Shop</span>
+            <span className="font-bold text-xl">Laxman's Vegetable Shop</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -37,15 +42,24 @@ export default function Header() {
             <Link href="/about" className={`${isActive("/about")} font-medium`}>
               About
             </Link>
-            <Link href="/products" className={`${isActive("/products")} font-medium`}>
+            <Link
+              href="/products"
+              className={`${isActive("/products")} font-medium`}
+            >
               Products
             </Link>
             {isAuthenticated ? (
-              <button onClick={logout} className="font-medium text-gray-700 hover:text-green-500">
+              <button
+                onClick={logout}
+                className="font-medium text-gray-700 hover:text-green-500"
+              >
                 Logout
               </button>
             ) : (
-              <Link href="/login" className={`${isActive("/login")} font-medium`}>
+              <Link
+                href="/login"
+                className={`${isActive("/login")} font-medium`}
+              >
                 Login
               </Link>
             )}
@@ -69,8 +83,15 @@ export default function Header() {
                 </span>
               )}
             </Link>
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-              {isMenuOpen ? <X className="h-6 w-6 text-gray-700" /> : <Menu className="h-6 w-6 text-gray-700" />}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6 text-gray-700" />
+              ) : (
+                <Menu className="h-6 w-6 text-gray-700" />
+              )}
             </button>
           </div>
         </div>
@@ -79,7 +100,11 @@ export default function Header() {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-2">
             <div className="flex flex-col space-y-3">
-              <Link href="/" className={`${isActive("/")} font-medium py-2`} onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href="/"
+                className={`${isActive("/")} font-medium py-2`}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Home
               </Link>
               <Link
@@ -99,8 +124,8 @@ export default function Header() {
               {isAuthenticated ? (
                 <button
                   onClick={() => {
-                    logout()
-                    setIsMenuOpen(false)
+                    logout();
+                    setIsMenuOpen(false);
                   }}
                   className="font-medium text-gray-700 hover:text-green-500 py-2 text-left"
                 >
@@ -120,6 +145,5 @@ export default function Header() {
         )}
       </div>
     </header>
-  )
+  );
 }
-

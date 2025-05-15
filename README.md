@@ -1,4 +1,4 @@
-### Ramesh's Vegetable Shop
+### Laxman's Vegetable Shop
 
 A modern e-commerce website built with Next.js and Tailwind CSS for a local vegetable shop. This application allows customers to browse products, search and filter vegetables, add items to cart, and complete the checkout process.
 

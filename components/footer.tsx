@@ -1,5 +1,12 @@
-import Link from "next/link"
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram } from "lucide-react"
+import Link from "next/link";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+} from "lucide-react";
 
 export default function Footer() {
   return (
@@ -56,35 +63,50 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-green-400" aria-label="Facebook">
+              <a
+                href="#"
+                className="hover:text-green-400"
+                aria-label="Facebook"
+              >
                 <Facebook className="h-6 w-6" />
               </a>
               <a href="#" className="hover:text-green-400" aria-label="Twitter">
                 <Twitter className="h-6 w-6" />
               </a>
-              <a href="#" className="hover:text-green-400" aria-label="Instagram">
+              <a
+                href="#"
+                className="hover:text-green-400"
+                aria-label="Instagram"
+              >
                 <Instagram className="h-6 w-6" />
               </a>
             </div>
             <div className="mt-4">
-              <p>Subscribe to our newsletter for updates on fresh arrivals and special offers!</p>
+              <p>
+                Subscribe to our newsletter for updates on fresh arrivals and
+                special offers!
+              </p>
               <div className="flex mt-2">
                 <input
                   type="email"
                   placeholder="Your email"
                   className="px-3 py-2 text-gray-800 rounded-l focus:outline-none flex-1"
                 />
-                <button className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-r">Subscribe</button>
+                <button className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-r">
+                  Subscribe
+                </button>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Ramesh's Vegetable Shop. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Laxman's Vegetable Shop. All
+            rights reserved.
+          </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-
